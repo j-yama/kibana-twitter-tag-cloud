@@ -44,6 +44,12 @@ services:
       - 5601:5601
     networks:
       - esnet
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.2.4
+    volumes:
+      - ./conf/logstash.conf/:/usr/share/logstash/pipeline/logstash.conf
+    networks:
+      - esnet
 
 volumes:
   esdata1:
