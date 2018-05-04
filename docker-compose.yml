@@ -48,6 +48,7 @@ services:
     image: docker.elastic.co/logstash/logstash:6.2.4
     volumes:
       - ./conf/logstash.conf/:/usr/share/logstash/pipeline/logstash.conf
+      - ./tweet_data/:/tmp/tweet_data
     networks:
       - esnet
 
